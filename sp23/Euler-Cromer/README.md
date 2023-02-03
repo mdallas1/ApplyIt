@@ -7,12 +7,16 @@
  \dot{x}&=v, x(0)=x_0. \end{split}\end{equation}$$
 
 Note that $v$ and $x$ may be vectors. In which case (1) is a system of $2N$ odes, where $N$ is the spatial dimension of the problem at hand. Given an initial position and velocity, one may attempt to solve this system by discretizing in time, $t_n = t_0+n\Delta t$, and applying the standard forward-Euler method, yielding the iterative process
+
 $$\begin{equation}\begin{split} v_{n+1}&=v_n+F_n\Delta t\\ 
 x_{n+1}&=x_n+v_n\Delta t, \end{split}\end{equation}$$
+
 where the subscript denotes evaluation at $t_n$.
 However, this approach can lead to unstable and non-physical solutions, as we'll soon see. An alternative approach is to apply a the semi-implicit method known as the *Euler-Cromer method* which takes the form
+
 $$\begin{equation}\begin{split}  v_{n+1}&=v_n+F_n\Delta t\\ 
 x_{n+1}&=x_n+v_{n+1}\Delta t. \end{split}\end{equation}$$
+
 The term *semi-implicit* here refers to the fact that only one of the equations above, namely, the equation for $x_{n+1}$, has $t_{n+1}$ on both sides of the equation. The right-hand side of the equation for $v_{n+1}$ only depends on $t_n$.
 The Euler-Cromer method is particularly effective in the context of oscillatory problems. In this case, one can show that the Euler-Cromer method produces highly stable solutions, and that on average it conserves the energy of the system in question. For proof of these claims, see [Stable solutions using the Euler approximation](https://github.com/mdallas1/ApplyIt/tree/main/sp23/Euler-Cromer/papers/cromer81.pdf). 
 
