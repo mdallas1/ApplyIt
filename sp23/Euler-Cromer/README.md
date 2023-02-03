@@ -3,9 +3,8 @@
 ## Introduction
  The motion of a particle of mass $m$ experiencing an external force may be analyzed using Newton's second law: $F=ma$. If $x(t)$ is the particle's position at time $t$, then $a=\ddot{x}$. Here we've used the dot notation for the deriative with respect to time. We can write Newton's second law as a system of first order order odes.
  
- $$\begin{equation} \begin{split}\dot{v}&=F, v(0)=v_0 
- 
- \\ \dot{x}&=v, x(0)=x_0. \end{split}\end{equation}$$
+ $$\begin{equation} \begin{split}\dot{v}&=F, v(0)=v_0 \\ 
+ \dot{x}&=v, x(0)=x_0. \end{split}\end{equation}$$
 
 Note that $v$ and $x$ may be vectors. In which case (1) is a system of $2N$ odes, where $N$ is the spatial dimension of the problem at hand. Given an initial position and velocity, one may attempt to solve this system by discretizing in time, $t_n = t_0+n\Delta t$, and applying the standard forward-Euler method, yielding the iterative process
 $$\begin{equation}\begin{split} v_{n+1}&=v_n+F_n\Delta t\\ 
